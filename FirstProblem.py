@@ -25,7 +25,7 @@ while i < n_ops:
 
     elif op[0] == 'r':
 
-        if len(list) != 0:
+        if len(list) != 0 and int(op[1]) in list:
             list.remove(int(op[1]))
 
     median = calculate_median(list)
