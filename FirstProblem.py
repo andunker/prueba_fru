@@ -9,27 +9,29 @@ def calculate_median(list):
         return 'Wrong!'
     else:
         return list[pivot]
+try:
+    n_ops = int(input('Indique el numero de operaciones:'))
 
-n_ops = int(input('Indique el numero de operaciones:'))
+    list = []
+    i = 0
+    result = []
 
-list = []
-i = 0
-result = []
+    while i < n_ops:
+        op = input('Indique operacion:').split(' ')
 
-while i < n_ops:
-    op = input('Indique operacion:').split(' ')
+        if op[0] == 'a':
+            list.append(int(op[1]))
+            list.sort()
 
-    if op[0] == 'a':
-        list.append(int(op[1]))
-        list.sort()
+        elif op[0] == 'r':
 
-    elif op[0] == 'r':
+            if len(list) != 0 and int(op[1]) in list:
+                list.remove(int(op[1]))
 
-        if len(list) != 0 and int(op[1]) in list:
-            list.remove(int(op[1]))
+        median = calculate_median(list)
+        result.append(median)
+        i = i + 1
 
-    median = calculate_median(list)
-    result.append(median)
-    i = i + 1
-
-print(result)
+    print(result)
+except:
+    print('Algo ha salido mal, verifica el formato de las entradas')
