@@ -22,4 +22,4 @@ while i <= n_nodes - 1:
     nodes[int(relation[0])].childs[int(relation[1])] = nodes[int(relation[1])]
     i = i + 1
 
-nodes = nodes[1]
+tree = nodes[1]
